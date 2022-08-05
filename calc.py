@@ -2,7 +2,7 @@ from argparse import ArgumentError
 import sys
 
 def add(x, y):
-    return x+y
+    pass
 
 def sub(x, y):
     pass
@@ -23,11 +23,13 @@ if __name__ == '__main__':
     if sys.argv[0].lower() == "add":
         print(add(x, y))
 
-    if sys.argv[0].lower() == "sub":
+    elif sys.argv[0].lower() == "sub":
         print(sub(x, y))
 
-    if sys.argv[0].lower() == "mult":
+    elif sys.argv[0].lower() == "mult":
         print(mult(x, y))
 
-    if sys.argv[0].lower() == "div":
+    elif sys.argv[0].lower() == "div":
         print(div(x, y))
+    
+    else: raise ArgumentError("Invalid Operation")
